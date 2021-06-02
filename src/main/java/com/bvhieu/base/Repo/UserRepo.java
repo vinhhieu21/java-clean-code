@@ -1,13 +1,15 @@
 package com.bvhieu.base.Repo;
 
 import com.bvhieu.base.Entity.User;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
-@Repository
-public class UserRepo {
-    public List<User> findAll() {
-        return null;
-    }
+@Transactional
+public interface UserRepo extends JpaRepository<User, Long> {
+    List<User> findAll();
+
+
+
 }
